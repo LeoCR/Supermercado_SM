@@ -1,0 +1,137 @@
+@media screen and (max-width: 989px) {
+            .mobile_nav_menu{
+                display: block;
+                width: 100%;
+                position: fixed;
+                top: 0px;
+                background: #fff;
+                
+            }
+            .agileits_header{
+            margin-top:120px;
+            }
+            body.closed_mobile_nav .mobile_nav_menu{
+                z-index: 999 ;
+            }
+            body.opened_mobile_nav  .mobile_nav_menu{
+                z-index: 5;
+            }
+            body.opened_mobile_nav header.header_nav{
+                z-index: 999;
+            }
+            .container_header_nav{
+                padding-top: 50px;
+            }
+            /** Start mobile menu start **/
+            #main {
+                transition: all ease-in-out .5s;
+            }
+            nav.navigation ul.nav li{
+                width: 90%;
+                float: left;
+                position: relative;
+                text-align: center;
+                margin: 0 auto;
+                max-width: 350px;
+            }
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+                font-family: 'PoiretOne-Regular' ,Arial,sans-serif;
+            }
+            .sidenav a:hover, .offcanvas a:focus{
+                color: #f1f1f1;
+            }
+            .sidenav .closebtn {
+                position: absolute;
+                top: -10px;
+                right: 25px;
+                font-size: 48px;
+                margin-left: 50px;
+
+            }
+            #main {
+                transition: margin-left .5s;
+                padding: 16px;
+            }
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            .sidenav .dropdown-menu a,
+            .sidenav .sub-menu-level1 a{
+                padding: 0;
+            }
+            li.opened_sub_menu .dropdown-menu,
+            li.opened_sub_menu .sub-menu-level1{
+                background: #F9F9F9;
+                position: relative;
+                float: left;
+                list-style: none;
+            }
+            .icon-angle-right{
+                font-size: 38px;
+                padding: 8px 0px 0px 0px;
+            }
+            li.nav_link_menu a{
+                width: 100%;
+                padding: 8px 20px 8px 22px;
+            }
+            
+            li.nav_link_menu:not(.opened_sub_menu),
+            li.nav_link_menu:not(.sub-menu-level1){
+                border-bottom:1px dashed #fff; 
+            }
+            li.opened_sub_menu a p,
+            li.sub-menu-level1 a p{
+               margin-left: 15px;
+                color: #000 ;
+            }
+            li.sub-menu-level1 a{
+                color: #000 ;
+            }
+            li.opened_sub_menu a .icon-angle-right,
+            li.sub-menu-level1 a .icon-angle-right{
+                padding: 10px 15px;
+            }
+            body.closed_mobile_nav header.header_nav,
+            body.opened_mobile_nav header.header_nav{
+                -webkit-transition: all ease-in-out 0.7s;
+                -moz-transition: all ease-in-out 0.7s;
+                -o-transition: all ease-in-out 0.7s;
+                -ms-transition: all ease-in-out 0.7s;
+                transition: all ease-in-out 0.7s;
+            }
+            body.closed_mobile_nav header.header_nav{
+                opacity: 0;visibility: hidden;display: none;
+            }
+            body.opened_mobile_nav header.header_nav{
+                opacity: 1;visibility: visible;display: block;
+            }
+            body.opened_mobile_nav .agileits_header.fixed{
+                left: 310px;    
+            }
+            body.fixed_desktop_nav header.header_nav{
+                position: relative !important; 
+                -webkit-transition:all 0.1s ease-in-out;
+                -moz-transition:all 0.1s ease-in-out;
+                -o-transition:all 0.1s ease-in-out;
+                -ms-transition:all 0.1s ease-in-out;
+                transition:all 0.1s ease-in-out;
+            }
+    
+}

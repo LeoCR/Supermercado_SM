@@ -1,0 +1,21 @@
+@media screen and (min-width:990px) and (max-width:9000px){
+    .fixed{
+        top: 0px;
+    }
+    .w3l_search input[type="text"]{
+        width: 78%;
+    }
+    body.fixed_desktop_nav header.header_nav{
+        position: fixed !important;
+        top: 0px;
+        -webkit-transition:all 0.1s ease-in-out;
+        -moz-transition:all 0.1s ease-in-out;
+        -o-transition:all 0.1s ease-in-out;
+        -ms-transition:all 0.1s ease-in-out;
+        transition:all 0.1s ease-in-out;
+    }
+}
+@media screen and (min-width: 1151px){
+         
+}
+ 

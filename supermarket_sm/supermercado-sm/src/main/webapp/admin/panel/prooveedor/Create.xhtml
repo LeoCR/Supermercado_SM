@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProoveedorCreateDlg" widgetVar="ProoveedorCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProoveedorTitle}">
+            <h:form id="ProoveedorCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{prooveedorController.selected != null}">
+                        <!--<p:outputLabel value="#{bundle.CreateProoveedorLabel_codProvedr}" for="codProvedr" />-->
+                        <p:inputText id="codProvedr" value="#{prooveedorController.selected.codProvedr}" title="#{bundle.CreateProoveedorTitle_codProvedr}" required="false" requiredMessage="#{bundle.CreateProoveedorRequiredMessage_codProvedr}"/>
+                        <p:outputLabel value="#{bundle.CreateProoveedorLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{prooveedorController.selected.nombre}" title="#{bundle.CreateProoveedorTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProoveedorRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.CreateProoveedorLabel_correo}" for="correo" />
+                        <p:inputText id="correo" value="#{prooveedorController.selected.correo}" title="#{bundle.CreateProoveedorTitle_correo}" required="true" requiredMessage="#{bundle.CreateProoveedorRequiredMessage_correo}"/>
+                        <p:outputLabel value="#{bundle.CreateProoveedorLabel_telef}" for="telef" />
+                        <p:inputText id="telef" value="#{prooveedorController.selected.telef}" title="#{bundle.CreateProoveedorTitle_telef}" required="true" requiredMessage="#{bundle.CreateProoveedorRequiredMessage_telef}"/>
+                        <p:outputLabel value="#{bundle.CreateProoveedorLabel_direccion}" for="direccion" />
+                        <p:inputText id="direccion" value="#{prooveedorController.selected.direccion}" title="#{bundle.CreateProoveedorTitle_direccion}" required="true" requiredMessage="#{bundle.CreateProoveedorRequiredMessage_direccion}"/>
+                        <p:outputLabel value="#{bundle.CreateProoveedorLabel_logo}" for="logo" />
+                        <p:inputTextarea rows="4" cols="30" id="logo" value="#{prooveedorController.selected.logo}" title="#{bundle.CreateProoveedorTitle_logo}" required="true" requiredMessage="#{bundle.CreateProoveedorRequiredMessage_logo}"/>
+                        <p:outputLabel value="#{bundle.CreateProoveedorLabel_web}" for="web" />
+                        <p:inputText id="web" value="#{prooveedorController.selected.web}" title="#{bundle.CreateProoveedorTitle_web}" required="true" requiredMessage="#{bundle.CreateProoveedorRequiredMessage_web}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{prooveedorController.create}" value="#{bundle.Save}" update="display,:ProoveedorListForm:datalist,:growl" oncomplete="handleSubmit(args,'ProoveedorCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProoveedorCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProoveedorViewDlg" widgetVar="ProoveedorViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProoveedorTitle}">
+            <h:form id="ProoveedorViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{prooveedorController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProoveedorLabel_codProvedr}"/>
+                        <h:outputText value="#{prooveedorController.selected.codProvedr}" title="#{bundle.ViewProoveedorTitle_codProvedr}"/>
+                        <h:outputText value="#{bundle.ViewProoveedorLabel_nombre}"/>
+                        <h:outputText value="#{prooveedorController.selected.nombre}" title="#{bundle.ViewProoveedorTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewProoveedorLabel_correo}"/>
+                        <h:outputText value="#{prooveedorController.selected.correo}" title="#{bundle.ViewProoveedorTitle_correo}"/>
+                        <h:outputText value="#{bundle.ViewProoveedorLabel_telef}"/>
+                        <h:outputText value="#{prooveedorController.selected.telef}" title="#{bundle.ViewProoveedorTitle_telef}"/>
+                        <h:outputText value="#{bundle.ViewProoveedorLabel_direccion}"/>
+                        <h:outputText value="#{prooveedorController.selected.direccion}" title="#{bundle.ViewProoveedorTitle_direccion}"/>
+                        <h:outputText value="#{bundle.ViewProoveedorLabel_logo}"/>
+                        <h:outputText value="#{prooveedorController.selected.logo}" title="#{bundle.ViewProoveedorTitle_logo}"/>
+                        <h:outputText value="#{bundle.ViewProoveedorLabel_web}"/>
+                        <h:outputText value="#{prooveedorController.selected.web}" title="#{bundle.ViewProoveedorTitle_web}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProoveedorViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

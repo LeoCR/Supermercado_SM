@@ -1,0 +1,23 @@
+@import "lightslider";
+ul.light_slider{
+			list-style: none outside none;
+		    padding-left: 0;
+            margin: 0;
+		}
+        #light_slider_container .item{
+            margin-bottom: 60px;
+        }
+		.content-slider li{
+		    background-color: #fff;
+		    text-align: center;
+		    p{
+		    	display:none;
+			}
+		}
+		.content-slider h3 {
+		    margin: 0;
+		    padding: 70px 0;
+		}
+		.light_slider_container{
+			width: 100%;
+		}

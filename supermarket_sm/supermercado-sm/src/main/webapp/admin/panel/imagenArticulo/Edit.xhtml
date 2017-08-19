@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ImagenArticuloEditDlg" widgetVar="ImagenArticuloEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditImagenArticuloTitle}">
+            <h:form id="ImagenArticuloEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{imagenArticuloController.selected != null}">
+                        <!--<p:outputLabel value="#{bundle.EditImagenArticuloLabel_idImagenArticulo}" for="idImagenArticulo" />-->
+                        <p:inputText id="idImagenArticulo" type="hidden" value="#{imagenArticuloController.selected.idImagenArticulo}" title="#{bundle.EditImagenArticuloTitle_idImagenArticulo}" required="false" requiredMessage="#{bundle.EditImagenArticuloRequiredMessage_idImagenArticulo}"/>
+                        <p:outputLabel value="#{bundle.EditImagenArticuloLabel_imagen}" for="imagen" />
+                        <p:inputTextarea rows="4" cols="30" id="imagen" value="#{imagenArticuloController.selected.imagen}" title="#{bundle.EditImagenArticuloTitle_imagen}" required="true" requiredMessage="#{bundle.EditImagenArticuloRequiredMessage_imagen}"/>
+                        <p:outputLabel value="#{bundle.EditImagenArticuloLabel_descripcion}" for="descripcion" />
+                        <p:inputTextarea rows="4" cols="30" id="descripcion" value="#{imagenArticuloController.selected.descripcion}" title="#{bundle.EditImagenArticuloTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.EditImagenArticuloLabel_codArtic}" for="codArtic" />
+                        <p:selectOneMenu id="codArtic" value="#{imagenArticuloController.selected.codArtic}" required="true" requiredMessage="#{bundle.EditImagenArticuloRequiredMessage_codArtic}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{articuloController.itemsAvailableSelectOne}"
+                                           var="codArticItem"
+                                           itemValue="#{codArticItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{imagenArticuloController.update}" value="#{bundle.Save}" update="display,:ImagenArticuloListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ImagenArticuloEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ImagenArticuloEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

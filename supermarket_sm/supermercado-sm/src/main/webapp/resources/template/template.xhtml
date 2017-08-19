@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>
+            <ui:insert name="title">Panel de Administraci&oacute;n</ui:insert>
+        </title>
+        <ui:insert name="custom_css"> 
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+         <link href="http://localhost:8080/supermercado-sm/resources/css/dev/admin.css" rel="stylesheet" type="text/css" media="all"/>
+        </ui:insert>
+        <style type="text/css" id="font_families">
+                    @font-face {
+                            font-family: 'Quicksand-Light';
+                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.eot');
+                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff2') format('woff2'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff') format('woff'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.ttf') format('truetype'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.svg#Quicksan-Light') format('svg'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.eot?#iefix') format('embedded-opentype');
+                            font-weight: normal;
+                            font-style: normal;
+                    }
+                    @font-face {
+                            font-family: 'Quicksand-Regular';
+                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.eot');
+                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff2') format('woff2'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff') format('woff'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.ttf') format('truetype'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.svg#Quicksan-Regular') format('svg'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.eot?#iefix') format('embedded-opentype');
+                            font-weight: normal;
+                            font-style: normal;
+                    }
+                    @font-face {
+                            font-family: 'Glyphicons Halflings';
+
+                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.eot');
+                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.woff2') format('woff2'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.ttf') format('truetype'),
+                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+                    }
+        </style>
+    </h:head>
+
+    <h:body class="admin_panel" id="admin_panel"> 
+        <p:growl id="growl" life="3000" />
+        <div id="overlay_menu" style="display:none;background-color:rgba(0,0,0,0.4);width:100%;
+                float: left;position: absolute;height: auto;min-height: 1900px;z-index:2;">
+            </div>
+        <div id="top" style="min-height:90px;z-index:9;">
+            <ui:insert name="top">
+                <a class="icon_home" href="http://localhost:8080/supermercado-sm/admin/panel/administrador.xhtml" target="_parent"><i class="fa fa-home" aria-hidden="true"></i></a>
+                <nav id="menu_nav" class="sidenav">
+                    <ul>
+                        <li></li>
+                        <li>
+                            <h:link outcome="/admin/panel/articulo/List" value="Art&iacute;culos"/>
+                            <span class="btn_open_sub_menu"></span>
+                            <ul>
+                                <li><h:link outcome="/admin/panel/imagenArticulo/List" value="Imagenes"/></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a  href="#">Facturas</a>
+                             <span class="btn_open_sub_menu"></span>
+                            <ul>
+                                <li><h:link outcome="/admin/panel/detalleFactura/List" value="Detalle Factura"/></li>
+                                <li><h:link outcome="/admin/panel/encabezadoFactura/List" value="Encabezado Factura"/></li>
+                            </ul>
+                        </li>
+                        <li><h:link outcome="/admin/panel/cliente/List" value="Clientes"/></li>
+                        <li><h:link outcome="/admin/panel/departamento/List" value="Departamentos"/></li>
+                        <li><h:link outcome="/admin/panel/empleado/List" value="Empleados"/></li>
+                        <li><h:link outcome="/admin/panel/prooveedor/List" value="Prooveedores"/></li>
+                        <li><h:link outcome="/admin/panel/sucursal/List" value="Sucursales"/></li>
+                    </ul>
+                </nav>
+                <!-- Use any element to open the sidenav --> 
+                   <div class="hamburger hamburger--3dy-r" style="float:right;">
+                                    <div class="hamburger-box">
+                                        <div class="hamburger-inner"></div>
+                                    </div>
+                   </div> 
+            </ui:insert>
+        </div>
+        <main id="main" class="main_content">
+        <p:layout fullPage="true">
+           <!-- <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
+               
+            </p:layoutUnit>
+-->
+            <p:layoutUnit position="south" size="60">
+                <ui:insert name="footer"/>
+            </p:layoutUnit>
+            <section id="body_primefaces_content">
+                    <p:layoutUnit position="center">
+                        <ui:insert name="body"/>
+                    </p:layoutUnit>
+            </section>
+        </p:layout>
+        </main>
+        <script type="text/javascript">
+            jQuery(document.getElementsByClassName("hamburger")).on('click',function(){
+                    jQuery('body').toggleClass("active_menu");
+                    jQuery(this).toggleClass("is-active");
+            });
+        </script>
+        <f:facet name="last">
+                <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+                <h:outputStylesheet library="css" name="dev/admin.css" /> 
+          </f:facet>
+    </h:body>
+
+</html>

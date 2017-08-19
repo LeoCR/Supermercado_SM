@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DepartamentoCreateDlg" widgetVar="DepartamentoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateDepartamentoTitle}">
+            <h:form id="DepartamentoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{departamentoController.selected != null}">
+                        <!--<p:outputLabel value="#{bundle.CreateDepartamentoLabel_codDepartmt}" for="codDepartmt" />-->
+                        <p:inputText id="codDepartmt"  type="hidden" value="#{departamentoController.selected.codDepartmt}" title="#{bundle.CreateDepartamentoTitle_codDepartmt}" required="false" requiredMessage="#{bundle.CreateDepartamentoRequiredMessage_codDepartmt}"/>
+                        <p:outputLabel value="#{bundle.CreateDepartamentoLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{departamentoController.selected.nombre}" title="#{bundle.CreateDepartamentoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateDepartamentoRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.CreateDepartamentoLabel_correo}" for="correo" />
+                        <p:inputTextarea rows="4" cols="30" id="correo" value="#{departamentoController.selected.correo}" title="#{bundle.CreateDepartamentoTitle_correo}" required="true" requiredMessage="#{bundle.CreateDepartamentoRequiredMessage_correo}"/>
+                        <p:outputLabel value="#{bundle.CreateDepartamentoLabel_telef}" for="telef" />
+                        <p:inputText id="telef" value="#{departamentoController.selected.telef}" title="#{bundle.CreateDepartamentoTitle_telef}" required="true" requiredMessage="#{bundle.CreateDepartamentoRequiredMessage_telef}"/>
+                        <p:outputLabel value="#{bundle.CreateDepartamentoLabel_codSucrsl}" for="codSucrsl" />
+                        <p:selectOneMenu id="codSucrsl" value="#{departamentoController.selected.codSucrsl}" required="true" requiredMessage="#{bundle.EditDepartamentoRequiredMessage_codSucrsl}">
+                            <f:selectItems value="#{sucursalController.itemsAvailableSelectOne}"
+                                           var="codSucrslItem"
+                                           itemValue="#{codSucrslItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{departamentoController.create}" value="#{bundle.Save}" update="display,:DepartamentoListForm:datalist,:growl" oncomplete="handleSubmit(args,'DepartamentoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DepartamentoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

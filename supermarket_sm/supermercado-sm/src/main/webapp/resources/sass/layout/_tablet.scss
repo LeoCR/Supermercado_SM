@@ -1,0 +1,19 @@
+@media screen and (max-width:989px){
+    .fixed{
+        top: 73px;
+    } 
+    .logo_products {
+        padding: 12em 2em 2em 2em;
+    }
+    .w3l_search input[type="text"]{
+        width: 74%;
+    }
+}
+@media screen and (max-width:650px){
+    .fixed{
+        top: 80px;
+    } 
+    .logo_products{
+        padding: 7em 2em 1em 2em;
+    }
+} 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EncabezadoFacturaEditDlg" widgetVar="EncabezadoFacturaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEncabezadoFacturaTitle}">
+            <h:form id="EncabezadoFacturaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{encabezadoFacturaController.selected != null}">
+                        <!--<p:outputLabel value="#{bundle.EditEncabezadoFacturaLabel_idEncbzd}" for="idEncbzd" />-->
+                        <p:inputText id="idEncbzd" value="#{encabezadoFacturaController.selected.idEncbzd}"  type="hidden"  title="#{bundle.EditEncabezadoFacturaTitle_idEncbzd}" required="false" requiredMessage="#{bundle.EditEncabezadoFacturaRequiredMessage_idEncbzd}"/>
+                        <p:outputLabel value="#{bundle.EditEncabezadoFacturaLabel_precioTotal}" for="precioTotal" />
+                        <p:inputText id="precioTotal" value="#{encabezadoFacturaController.selected.precioTotal}" title="#{bundle.EditEncabezadoFacturaTitle_precioTotal}" required="true" requiredMessage="#{bundle.EditEncabezadoFacturaRequiredMessage_precioTotal}"/>
+                        <p:outputLabel value="#{bundle.EditEncabezadoFacturaLabel_impuestoDeVenta}" for="impuestoDeVenta" />
+                        <p:inputText id="impuestoDeVenta" value="#{encabezadoFacturaController.selected.impuestoDeVenta}" title="#{bundle.EditEncabezadoFacturaTitle_impuestoDeVenta}" required="true" requiredMessage="#{bundle.EditEncabezadoFacturaRequiredMessage_impuestoDeVenta}"/>
+                        <p:outputLabel value="#{bundle.EditEncabezadoFacturaLabel_fechaCompra}" for="fechaCompra" />
+                        <p:calendar id="fechaCompra" pattern="MM/dd/yyyy HH:mm:ss" value="#{encabezadoFacturaController.selected.fechaCompra}" title="#{bundle.EditEncabezadoFacturaTitle_fechaCompra}" required="true" requiredMessage="#{bundle.EditEncabezadoFacturaRequiredMessage_fechaCompra}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditEncabezadoFacturaLabel_idCliente}" for="idCliente" />
+                        <p:selectOneMenu id="idCliente" value="#{encabezadoFacturaController.selected.idCliente}" required="true" requiredMessage="#{bundle.EditEncabezadoFacturaRequiredMessage_idCliente}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"
+                                           var="idClienteItem"
+                                           itemValue="#{idClienteItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditEncabezadoFacturaLabel_empleadAtiend}" for="empleadAtiend" />
+                        <p:selectOneMenu id="empleadAtiend" value="#{encabezadoFacturaController.selected.empleadAtiend}" required="true" requiredMessage="#{bundle.EditEncabezadoFacturaRequiredMessage_empleadAtiend}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{empleadoController.itemsAvailableSelectOne}"
+                                           var="empleadAtiendItem"
+                                           itemValue="#{empleadAtiendItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditEncabezadoFacturaLabel_noDetallFactr}" for="noDetallFactr" />
+                        <p:selectOneMenu id="noDetallFactr" value="#{encabezadoFacturaController.selected.noDetallFactr}" required="true" requiredMessage="#{bundle.EditEncabezadoFacturaRequiredMessage_noDetallFactr}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{detalleFacturaController.itemsAvailableSelectOne}"
+                                           var="noDetallFactrItem"
+                                           itemValue="#{noDetallFactrItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{encabezadoFacturaController.update}" value="#{bundle.Save}" update="display,:EncabezadoFacturaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EncabezadoFacturaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EncabezadoFacturaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

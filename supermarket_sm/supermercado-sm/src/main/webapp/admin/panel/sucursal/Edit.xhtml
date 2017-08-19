@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SucursalEditDlg" widgetVar="SucursalEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditSucursalTitle}">
+            <h:form id="SucursalEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{sucursalController.selected != null}">
+                        <!--<p:outputLabel value="#{bundle.EditSucursalLabel_codSucursl}" for="codSucursl" />-->
+                        <p:inputText id="codSucursl" type="hidden" value="#{sucursalController.selected.codSucursl}" title="#{bundle.EditSucursalTitle_codSucursl}" required="false" requiredMessage="#{bundle.EditSucursalRequiredMessage_codSucursl}"/>
+                        <p:outputLabel value="#{bundle.EditSucursalLabel_nombre}" for="nombre" />
+                        <p:inputTextarea rows="4" cols="30" id="nombre" value="#{sucursalController.selected.nombre}" title="#{bundle.EditSucursalTitle_nombre}" required="true" requiredMessage="#{bundle.EditSucursalRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditSucursalLabel_direccion}" for="direccion" />
+                        <p:inputTextarea rows="4" cols="30" id="direccion" value="#{sucursalController.selected.direccion}" title="#{bundle.EditSucursalTitle_direccion}" required="true" requiredMessage="#{bundle.EditSucursalRequiredMessage_direccion}"/>
+                        <p:outputLabel value="#{bundle.EditSucursalLabel_telef}" for="telef" />
+                        <p:inputText id="telef" value="#{sucursalController.selected.telef}" title="#{bundle.EditSucursalTitle_telef}" required="true" requiredMessage="#{bundle.EditSucursalRequiredMessage_telef}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{sucursalController.update}" value="#{bundle.Save}" update="display,:SucursalListForm:datalist,:growl" oncomplete="handleSubmit(args, 'SucursalEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="SucursalEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

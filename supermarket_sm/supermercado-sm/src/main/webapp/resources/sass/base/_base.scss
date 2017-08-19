@@ -1,0 +1,221 @@
+        *{
+            font-family: 'Quicksand-Light', Verdana, sans-serif;
+            font-weight: 500;
+        }
+       
+        nav.sidenav{
+            ul{
+                li{
+                    color: #fff !important;
+                    text-decoration: none;
+                    a{
+                        color: #fff !important;
+                        text-decoration: none;
+                        &:hover{
+                            color: #fff !important;
+                            text-decoration: none;
+                        }
+                        &:active,&:visited{
+                            color: #fff !important;
+                            text-decoration: none;
+                        }
+                    }
+                    &:hover,&:active,&:visited{
+                        a{
+                            color: #fff !important;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        
+        nav.sidenav{
+            ul{
+                li{
+                    color: #fff !important;
+                    text-decoration: none;
+                    a{
+                        color: #fff !important;
+                        text-decoration: none;
+                        &:hover{
+                            color: #fff !important;
+                            text-decoration: none;
+                        }
+                        &:active,&:visited{
+                            color: #fff !important;
+                            text-decoration: none;
+                        }
+                    }
+                    &:hover,&:active,&:visited{
+                        a{
+                            color: #fff !important;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+        li.nav_link_menu a{
+            min-height: 60px;
+            height:auto;
+            max-height: 120px;
+            -webkit-transition: all ease-in-out 0.5s ;
+            -moz-transition: all ease-in-out 0.5s ;
+            -o-transition: all ease-in-out 0.5s ;
+            -ms-transition: all ease-in-out 0.5s ; 
+            transition: all ease-in-out 0.5s ;
+        }
+        li.nav_link_menu a i{
+            -webkit-transition: all ease-in-out 0.5s ;
+            -moz-transition: all ease-in-out 0.5s ;
+            -o-transition: all ease-in-out 0.5s ;
+            -ms-transition: all ease-in-out 0.5s ; 
+            transition: all ease-in-out 0.5s ;
+        }
+        li.nav_link_menu a i:hover{
+            -webkit-transition: all ease-in-out 0.5s ;
+            -moz-transition: all ease-in-out 0.5s ;
+            -o-transition: all ease-in-out 0.5s ;
+            -ms-transition: all ease-in-out 0.5s ; 
+            transition: all ease-in-out 0.5s ;
+            -moz-animation: hover_nav_icon  0.5s linear 0s 1 normal;
+            -o-animation: hover_nav_icon  0.5s linear 0s 1 normal;
+            -ms-animation: hover_nav_icon  0.5s linear 0s 1 normal;
+            -webkit-animation: hover_nav_icon  0.5s linear 0s 1 normal;
+            animation: hover_nav_icon  0.5s linear 0s 1 normal;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        li.nav_link_menu a:hover{
+            -moz-animation: hover_nav  0.5s linear 0s 1 normal;
+            -o-animation: hover_nav  0.5s linear 0s 1 normal;
+            -ms-animation: hover_nav  0.5s linear 0s 1 normal;
+            -webkit-animation: hover_nav  0.5s linear 0s 1 normal;
+            animation: hover_nav  0.5s linear 0s 1 normal;
+            background:#973428;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+        .nav_link_menu a p{
+                float: left;
+        }
+        .nav_link_menu a i{
+            float: right;
+        }
+        li.nav_link_menu{
+                &:hover{
+                    a{
+                        &:hover{
+                            p,i{
+                                color: #fff;
+                            }
+                        }
+                        i,p{
+                                color: #fff;
+                        }
+                        
+                    }
+                }
+        }
+        /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes hover_nav_icon {
+            0% {opacity:0.3;color:#000;}
+            40% {opacity:0.5;}
+            65%{opacity:0.7;}
+            100% {opacity:1;}
+        }
+        /* Standard syntax */
+        @-moz-keyframes hover_nav_icon {
+            0% {opacity:0.3;color:#000;}
+            40% {opacity:0.5;}
+            65%{opacity:0.7;}
+            100% {opacity:1;}
+        }
+        /* Standard syntax */
+        @-o-keyframes hover_nav_icon {
+            0% {opacity:0.3;color:#000;}
+            40% {opacity:0.5;}
+            65%{opacity:0.7;}
+            100% {opacity:1;}
+        }
+        /* Standard syntax */
+        @-ms-keyframes hover_nav_icon {
+            0% {opacity:0.3;color:#000;}
+            40% {opacity:0.5;}
+            65%{opacity:0.7;}
+            100% {opacity:1;}
+        }
+        /* Standard syntax */
+        @keyframes hover_nav_icon {
+            0% {opacity:0.3;color:#000;}
+            40% {opacity:0.5;}
+            65%{opacity:0.7;}
+            100% {opacity:1;}
+        }
+
+
+        /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes hover_nav {
+            0% {height:0px;background:#fff;opacity:0.3;color:#000;}
+            40% {height:20%;background:#F8F8F8;opacity:0.5;}
+            65%{opacity:0.7;background: #FB230B;height:80%;}
+            100% {height:100%;background:#A22A1D;opacity:1;}
+        }
+        /* Standard syntax */
+        @-moz-keyframes hover_nav {
+            0% {height:0px;background:#fff;opacity:0.3;color:#000;}
+            40% {height:20%;background:#F8F8F8;opacity:0.5;}
+            65%{opacity:0.7;background: #FB230B;height:80%;}
+            100% {height:100%;background:#A22A1D;opacity:1;}
+        }
+        /* Standard syntax */
+        @-o-keyframes hover_nav {
+            0% {height:0px;background:#fff;opacity:0.3;color:#000;}
+            40% {height:20%;background:#F8F8F8;opacity:0.5;}
+            65%{opacity:0.7;background: #FB230B;height:80%;}
+            100% {height:100%;background:#A22A1D;opacity:1;}
+        }
+        /* Standard syntax */
+        @-ms-keyframes hover_nav {
+            0% {height:0px;background:#fff;opacity:0.3;color:#000;}
+            40% {height:20%;background:#F8F8F8;opacity:0.5;}
+            65%{opacity:0.7;background: #FB230B;height:80%;}
+            100% {height:100%;background:#A22A1D;opacity:1;}
+        }
+        /* Standard syntax */
+        @keyframes hover_nav {
+            0% {height:0px;background:#fff;opacity:0.3;color:#000;}
+            40% {height:20%;background:#F8F8F8;opacity:0.5;}
+            65%{opacity:0.7;background: #FB230B;height:80%;}
+            100% {height:100%;background:#A22A1D;opacity:1;}
+        }
+        @media screen and (min-width:991px)  and (max-width: 4590px){
+                .closebtn{
+                    display: none;
+                } 
+        }
+        li.opened_sub_menu .dropdown-menu,
+        li.opened_sub_menu .sub-menu-level1{
+            display: block !important;
+            visibility: visible !important; 
+        }  
+        li:not(.opened_sub_menu) .dropdown-menu,
+        li:not(.opened_sub_menu) .sub-menu-level1{
+            display: none !important;
+            visibility: hidden!important;
+        }
+        .down_arrow{
+            -webkit-transform:rotate(90deg);
+            -moz-transform:rotate(90deg);
+            -ms-transform:rotate(90deg);
+            -o-transform:rotate(90deg);
+            transform:rotate(90deg);
+        }

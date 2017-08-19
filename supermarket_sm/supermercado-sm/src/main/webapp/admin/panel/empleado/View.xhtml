@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EmpleadoViewDlg" widgetVar="EmpleadoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEmpleadoTitle}">
+            <h:form id="EmpleadoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{empleadoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEmpleadoLabel_idEmpled}"/>
+                        <h:outputText value="#{empleadoController.selected.idEmpled}" title="#{bundle.ViewEmpleadoTitle_idEmpled}"/>
+                        <h:outputText value="#{bundle.ViewEmpleadoLabel_nombre}"/>
+                        <h:outputText value="#{empleadoController.selected.nombre}" title="#{bundle.ViewEmpleadoTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewEmpleadoLabel_clave}"/>
+                        <h:outputText value="#{empleadoController.selected.clave}" title="#{bundle.ViewEmpleadoTitle_clave}"/>
+                        <h:outputText value="#{bundle.ViewEmpleadoLabel_role}"/>
+                        <h:outputText value="#{empleadoController.selected.role}" title="#{bundle.ViewEmpleadoTitle_role}"/>
+                        <h:outputText value="#{bundle.ViewEmpleadoLabel_correo}"/>
+                        <h:outputText value="#{empleadoController.selected.correo}" title="#{bundle.ViewEmpleadoTitle_correo}"/>
+                        <h:outputText value="#{bundle.ViewEmpleadoLabel_salario}"/>
+                        <h:outputText value="#{empleadoController.selected.salario}" title="#{bundle.ViewEmpleadoTitle_salario}"/>
+                        <h:outputText value="#{bundle.ViewEmpleadoLabel_codDepart}"/>
+                        <h:outputText value="#{empleadoController.selected.codDepart}" title="#{bundle.ViewEmpleadoTitle_codDepart}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EmpleadoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

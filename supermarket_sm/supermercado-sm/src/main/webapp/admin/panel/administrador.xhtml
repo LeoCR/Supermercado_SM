@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+ 
+    <body>
+
+        <ui:composition template="./../../resources/template/template.xhtml">
+
+            <ui:define name="body">
+                <h1>Panel de Administraci&oacute;n</h1>
+                    <h:form>
+                        <p:poll interval="1" update="grafico" />
+                        <p:chart id="grafico" type="line" model="#{classeGrafico.lineModel}" style="height: 500px; width: 880px" />
+                    </h:form>
+                <p:chart type="line" model="#{lineChartView.lineModel1}" style="height:300px;"/>
+                <p:chart type="line" model="#{lineChartView.lineModel2}" style="height:300px;"/> 
+                <h3 style="margin-top:0">Art&iacute;culos</h3>
+                <p:graphicImage value="#{graphicImageView.chart}" />
+                <h3>Sucursales</h3>
+                <p:graphicImage value="#{graphicImageView.chart}" />
+                <p:chart type="pie" model="#{pieChartView.pieModel1}" style="width:400px;height:300px" />
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

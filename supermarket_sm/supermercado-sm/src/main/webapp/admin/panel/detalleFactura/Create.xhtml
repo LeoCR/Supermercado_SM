@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DetalleFacturaCreateDlg" widgetVar="DetalleFacturaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateDetalleFacturaTitle}">
+            <h:form id="DetalleFacturaCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{detalleFacturaController.selected != null}">
+                        <!--<p:outputLabel value="#{bundle.CreateDetalleFacturaLabel_noDetallFact}" for="noDetallFact" />-->
+                        <p:inputText id="noDetallFact" value="#{detalleFacturaController.selected.noDetallFact}"  type="hidden" title="#{bundle.CreateDetalleFacturaTitle_noDetallFact}" required="false" requiredMessage="#{bundle.CreateDetalleFacturaRequiredMessage_noDetallFact}"/>
+                        <p:outputLabel value="#{bundle.CreateDetalleFacturaLabel_cantTotDeArtic}" for="cantTotDeArtic" />
+                        <p:inputText id="cantTotDeArtic" value="#{detalleFacturaController.selected.cantTotDeArtic}" title="#{bundle.CreateDetalleFacturaTitle_cantTotDeArtic}" required="true" requiredMessage="#{bundle.CreateDetalleFacturaRequiredMessage_cantTotDeArtic}"/>
+                        <p:outputLabel value="#{bundle.CreateDetalleFacturaLabel_codArticulo}" for="codArticulo" />
+                        <p:selectOneMenu id="codArticulo" value="#{detalleFacturaController.selected.codArticulo}" required="true" requiredMessage="#{bundle.EditDetalleFacturaRequiredMessage_codArticulo}">
+                            <f:selectItems value="#{articuloController.itemsAvailableSelectOne}"
+                                           var="codArticuloItem"
+                                           itemValue="#{codArticuloItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{detalleFacturaController.create}" value="#{bundle.Save}" update="display,:DetalleFacturaListForm:datalist,:growl" oncomplete="handleSubmit(args,'DetalleFacturaCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DetalleFacturaCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
