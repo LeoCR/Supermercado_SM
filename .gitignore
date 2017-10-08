@@ -1,1 +1,7 @@
 /supermarket_sm/supermercado-sm/target/
+.DS_Store
+/supermarket_sm/supermercado-sm/src/main/webapp/resources/node_modules/
+node_modules
+
+
+

@@ -2,7 +2,7 @@
   "name": "supermercado",
   "version": "1.0.0",
   "description": "supermercado java web",
-  "main": "index.js",
+  "main": "Gulpfile.js",
   "scripts": {
     "test": "gulp "
   },

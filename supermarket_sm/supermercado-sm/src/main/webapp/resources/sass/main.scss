@@ -1,6 +1,6 @@
 @import "compass/css3";
-@import "base/base";  
 @import "vendors/bootstrap-sass/bootstrap-sass";
+@import "base/base";  
 @import "layout/desktop"; 
 @import "layout/layout";
 @import "vendors/grocery_store/flexslider";
@@ -9,9 +9,9 @@
 @import "layout/site/desktop_menu"; 
 @import "vendors/font-awesome/icons_awesome";
 @import "vendors/hamburgers/hamburgers";
+@import "vendors/lightslider/main_slider";
 @import "layout/tablet";  
 @import "layout/site/mobile_menu"; 
-@import "vendors/lightslider/main_slider";
 .lSAction>.lSNext{
     background: url('http://localhost:8080/supermercado-sm/resources/images/btn_next.png') no-repeat;
     background-size: contain;
