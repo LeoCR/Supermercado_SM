@@ -1,7 +1,7 @@
 *{
     text-decoration: none;
     font-family: 'Quicksand-Light', Verdana, sans-serif;
-}  
+}
 a:link:hover, a:visited:hover{
 	text-decoration:none;
 	color:inherit !important;
@@ -10,10 +10,10 @@ a:link:hover, a:visited:hover{
     max-width: 200px;
 }
 .img_provider{
-        max-width: 290px;
+    max-width: 290px;
     float: left;position: relative;
     height: auto;margin: 5px;
-    }
+}
 aside.menu-nav-top{
     ul#user_options.user_options{
         li{
@@ -40,7 +40,7 @@ aside.menu-nav-top{
                     }//end ul#user_options.user_options li a i.user_icon
                 }//end ul#user_options.user_options li a i
                 span{
-                    
+
                     &.caret{
                         color: #fff;font-size: 19px;
                         &:hover{
@@ -59,14 +59,14 @@ aside.product_list_header{
             border: 1px solid #84c639;
             width: 150px;
             p,i{
-                color: #fff; 
+                color: #fff;
                 font-size: 13px;
             }
             p{
                 float: left
             }
             i{
-               font-size: 29px; 
+               font-size: 29px;
                 float: right
             }
         }

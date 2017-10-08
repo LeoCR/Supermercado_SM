@@ -10,48 +10,72 @@
         <title>
             <ui:insert name="title">Panel de Administraci&oacute;n</ui:insert>
         </title>
-        <ui:insert name="custom_css"> 
+        <ui:insert name="custom_css">
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
          <link href="http://localhost:8080/supermercado-sm/resources/css/dev/admin.css" rel="stylesheet" type="text/css" media="all"/>
         </ui:insert>
         <style type="text/css" id="font_families">
                     @font-face {
-                            font-family: 'Quicksand-Light';
-                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.eot');
-                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff2') format('woff2'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff') format('woff'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.ttf') format('truetype'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.svg#Quicksan-Light') format('svg'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.eot?#iefix') format('embedded-opentype');
-                            font-weight: normal;
-                            font-style: normal;
-                    }
-                    @font-face {
-                            font-family: 'Quicksand-Regular';
-                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.eot');
-                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff2') format('woff2'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff') format('woff'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.ttf') format('truetype'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.svg#Quicksan-Regular') format('svg'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.eot?#iefix') format('embedded-opentype');
-                            font-weight: normal;
-                            font-style: normal;
-                    }
-                    @font-face {
-                            font-family: 'Glyphicons Halflings';
+          							font-family: 'FontAwesome';
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Fontawesome/fontawesome.eot');
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Fontawesome/fontawesome.woff2') format('woff2'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Fontawesome/fontawesome.woff') format('woff'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Fontawesome/fontawesome.ttf') format('truetype'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Fontawesome/fontawesome.svg#Fontawesome') format('svg'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Fontawesome/fontawesome.eot?#iefix') format('embedded-opentype');
+          							font-weight: normal;
+          							font-style: normal;
+          					}
 
-                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.eot');
-                            src: url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.woff2') format('woff2'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.ttf') format('truetype'),
-                            url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-                    }
+          					@font-face {
+          							font-family: 'PoiretOne-Regular';
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Poiret_One/PoiretOne-Regular/PoiretOne-Regular.eot');
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Poiret_One/PoiretOne-Regular/PoiretOne-Regular.woff2') format('woff2'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Poiret_One/PoiretOne-Regular/PoiretOne-Regular.woff') format('woff'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Poiret_One/PoiretOne-Regular/PoiretOne-Regular.ttf') format('truetype'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Poiret_One/PoiretOne-Regular/PoiretOne-Regular.svg#PoiretOne-Regular') format('svg'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Poiret_One/PoiretOne-Regular/PoiretOne-Regular.eot?#iefix') format('embedded-opentype');
+          							font-weight: normal;
+          							font-style: normal;
+          			        }
+
+          			        @font-face {
+          							font-family: 'Quicksand-Light';
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.eot');
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff2') format('woff2'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff') format('woff'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.ttf') format('truetype'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.svg#Quicksan-Light') format('svg'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Light/Quicksand-Light.eot?#iefix') format('embedded-opentype');
+          							font-weight: normal;
+          							font-style: normal;
+          			        }
+          			        @font-face {
+          							font-family: 'Quicksand-Regular';
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.eot');
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff2') format('woff2'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff') format('woff'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.ttf') format('truetype'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.svg#Quicksan-Regular') format('svg'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.eot?#iefix') format('embedded-opentype');
+          							font-weight: normal;
+          							font-style: normal;
+          			        }
+          					@font-face {
+          							font-family: 'Glyphicons Halflings';
+
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.eot');
+          							src: url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.woff2') format('woff2'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.ttf') format('truetype'),
+          							url('http://localhost:8080/supermercado-sm/resources/fonts/glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+          					}
         </style>
     </h:head>
 
-    <h:body class="admin_panel" id="admin_panel"> 
+    <h:body class="admin_panel" id="admin_panel">
         <p:growl id="growl" life="3000" />
         <div id="overlay_menu" style="display:none;background-color:rgba(0,0,0,0.4);width:100%;
                 float: left;position: absolute;height: auto;min-height: 1900px;z-index:2;">
@@ -66,7 +90,9 @@
                             <h:link outcome="/admin/panel/articulo/List" value="Art&iacute;culos"/>
                             <span class="btn_open_sub_menu"></span>
                             <ul>
-                                <li><h:link outcome="/admin/panel/imagenArticulo/List" value="Imagenes"/></li>
+                                <li>
+                                  <h:link outcome="/admin/panel/imagenArticulo/List" value="Imagenes"/>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -84,20 +110,16 @@
                         <li><h:link outcome="/admin/panel/sucursal/List" value="Sucursales"/></li>
                     </ul>
                 </nav>
-                <!-- Use any element to open the sidenav --> 
+                <!-- Use any element to open the sidenav -->
                    <div class="hamburger hamburger--3dy-r" style="float:right;">
                                     <div class="hamburger-box">
                                         <div class="hamburger-inner"></div>
                                     </div>
-                   </div> 
+                   </div>
             </ui:insert>
         </div>
         <main id="main" class="main_content">
         <p:layout fullPage="true">
-           <!-- <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
-               
-            </p:layoutUnit>
--->
             <p:layoutUnit position="south" size="60">
                 <ui:insert name="footer"/>
             </p:layoutUnit>
@@ -115,9 +137,8 @@
             });
         </script>
         <f:facet name="last">
-                <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-                <h:outputStylesheet library="css" name="dev/admin.css" /> 
-          </f:facet>
+                <h:outputStylesheet library="css" name="dev/admin.css" />
+        </f:facet>
     </h:body>
 
 </html>

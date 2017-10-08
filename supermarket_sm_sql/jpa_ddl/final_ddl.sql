@@ -296,7 +296,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 #muestra los empleados que pertenencen al departamento 2
 SELECT dep.cod_departmt,dep.nombre,em.nombre,em.salario
 from departamento dep, empleado em
-WHERE em.codDepart=dep.cod_departmt and em.codDepart='2';
+WHERE em.codDepart=dep.cod_departmt and dep.nombre='Cajeros';
 
 #muestra a todos los empleados que pertenecen a la sucursal de sanpedro
 SELECT su.nombre,dep.cod_departmt,dep.nombre,em.nombre,su.cod_sucursl
@@ -318,3 +318,76 @@ SELECT enc.id_encbzd,enc.fechaCompra,em.nombre, cl.nombre,cl.cedula, det.cantTot
 from encabezado_factura enc, cliente cl, empleado em,detalle_factura det, articulo ar
 WHERE enc.idCliente=cl.id_client and enc.empleadAtiend=em.id_empled and enc.noDetallFactr=det.no_detall_fact
 and det.codArticulo=ar.cod_articl and enc.id_encbzd='1';
+
+
+
+#INSERTS ARTICULOS
+INSERT INTO `articulo` VALUES (10,'Leche Condesada',1500,0.5000,'Lácteos',5),
+(11,'Atún Tesoro Del Mar',1200,0.3500,'Alimentos Enlatados',6),
+(12,'Meneitos',300,0.1500,'Golosinas',7),
+(13,'Cremas',800,0.6500,'Golosinas',8),
+(14,'Salsa Lizano',900,0.1500,'Salsas',9),
+(15,'Atún Calvo',1200,0.3000,'Alimentos Enlatados',10),
+(16,'Canelones',1100,0.3500,'Pastas',11),
+
+#INSERTS articulo_sucursal
+INSERT INTO articulo_de_sucursal VALUES/* idArtSuc INTEGER AUTO_INCREMENT,stock INTEGER  ,codSucursl INTEGER , codArticulo INTEGER */
+(1,10,1,1),
+(2,70,1,2),
+(3,200,1,3),
+(4,90,1,4),
+(5,10,1,5),
+(6,70,1,6),
+(7,200,1,7),
+(8,90,1,8),
+(9,10,1,9),
+(10,70,1,10),
+(11,200,1,11),
+(12,90,1,12),
+(13,10,1,13),
+(14,70,1,14),
+(15,200,1,15),
+(16,90,1,16),
+(17,10,2,1),
+(18,70,3,2),
+(19,200,4,3),
+(20,90,3,4),
+(21,10,4,5),
+(22,70,2,6),
+(23,200,3,7),
+(24,90,4,8),
+(25,10,2,9),
+(26,70,3,10),
+(27,200,4,11),
+(28,90,3,12),
+(29,10,4,13),
+(30,70,2,14),
+(31,200,2,15),
+(32,90,3,16);
+
+#INSERTS Empleados
+INSERT INTO empleado VALUES /* id_empled INTEGER AUTO_INCREMENT ,nombre VARCHAR(240) , clave LONGTEXT ,role VARCHAR(240) ,
+correo TEXT , salario FLOAT ,codDepart INTEGER  */
+(8,'Pablo Madrigal Gonzales','loji#6%(&hhV535','Distribuidor','pablo@supersm.cr',400000,3),
+(9,'Gabriel Sancho Zamora','gsz$453^#LKEDR59','Cajero','gabriel@supersm.cr',500000,4),
+(10,'Minor Badilla Núñez','mbn$453^#LKEDR59','Cajero','minor@supersm.cr',500000,3),
+
+#inserts encabezado factura
+
+INSERT INTO encabezado_factura VALUES/*
+id_encbzd INTEGER AUTO_INCREMENT,precioTotal INTEGER  , impuestoDeVenta DECIMAL(6,4) ,
+fechaCompra TIMESTAMP ,idCliente INTEGER , empleadAtiend INTEGER ,   noDetallFactr INTEGER */
+(11,3700,0.60,'2017-04-05 18:19:03',3,4,11),
+(12,8600,0.60,'2017-04-05 18:19:03',4,2,12),
+(13,6500,0.60,'2017-04-05 18:19:03',1,3,13),
+(14,8400,0.60,'2017-04-05 18:19:03',2,5,14),
+(15,6700,0.60,'2017-04-05 18:19:03',5,3,15),
+
+#Inserts detalle factura
+INSERT INTO detalle_factura VALUES/*
+no_detall_fact INTEGER  AUTO_INCREMENT, cantTotDeArtic INTEGER ,codArticulo INTEGER   */
+(11,1,1),
+(12,2,2),
+(13,3,3),
+(14,4,4),
+(15,5,1),

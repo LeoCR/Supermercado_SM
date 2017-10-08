@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.supermercado.sm.controller.facade;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
 
 /**
  *
@@ -60,5 +59,74 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
-    
+    public List<T> findWithNamedQuery(String namedQueryName) {
+        return getEntityManager().createNamedQuery(namedQueryName).getResultList();
+    }
+
+    public List findWithNamedQuery(String namedQueryName, Map<String, Object> parameters, int resultLimit) {
+        Set<Map.Entry<String, Object>> rawParameters = parameters.entrySet();
+        Query query = getEntityManager().createNamedQuery(namedQueryName);
+        if (resultLimit > 0) {
+          query.setMaxResults(resultLimit);
+        }
+        for (Map.Entry<String, Object> entry : rawParameters) {
+          query.setParameter(entry.getKey(), entry.getValue());
+        }
+        return query.getResultList();
+    }
+
+    public List<T> findWithQuery(String queryName) {
+        return getEntityManager().createQuery(queryName).getResultList();
+    }
+
+    public List<T> findByNativeQuery(String sql) {
+        try {
+            return getEntityManager().createNativeQuery(sql, entityClass).getResultList();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            System.err.println(e.getCause());
+            System.err.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    public T findSingleWithNamedQuery(String namedQueryName) {
+            T result = null;
+            try {
+              result = (T) getEntityManager().createNamedQuery(namedQueryName).getSingleResult();
+            } catch (NoResultException e) {
+            }
+            return result;
+    }
+
+    public T findSingleWithNamedQuery(String namedQueryName, Map<String, Object> parameters) {
+            Set<Map.Entry<String, Object>> rawParameters = parameters.entrySet();
+            Query query = getEntityManager().createNativeQuery(namedQueryName);
+            for (Map.Entry<String, Object> entry : rawParameters) {
+              query.setParameter(entry.getKey(), entry.getValue());
+            }
+            T result = null;
+            try {
+              result = (T) query.getSingleResult();
+            } catch (NoResultException e) {
+            }
+            return result;
+    }
+    public List<T[]> findNativeQueryWithParameters(String nativeSQL, int param,String ValueParam) {
+            
+             javax.persistence.Query query = getEntityManager().createNamedQuery(nativeSQL );
+            
+              query.setParameter(param, ValueParam);
+           
+            List<T[]> result = null;
+            try {
+              result = (List<T[]>) query.getResultList();
+            } catch (NoResultException e) {
+                e.printStackTrace();
+                System.err.println(e.getMessage());
+                 System.err.println(e.getLocalizedMessage());
+                System.err.println(e.getCause());
+            }
+            return  result;
+    }
 }
